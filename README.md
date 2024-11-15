@@ -9,4 +9,4 @@ Explanation: The robot first informs the applicant about a small quiz. The perso
   is correct or not, along with an interactive animation from the robot. Additionally, the answer on screen will turn red or green if clicked depending if its correct 
   or not. After answering a question either on screen or by speech, pepper automatically switches to a different question. The quiz consists of 3 questions and has 
   a timer of 3 minutes. If the applicant exceeds 3 minutes without answering all the questions, the quiz will automatically end.
-By:Joseph Mattar
+By: Joseph Mattar
