@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interact with Pepper</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/w3.css">
+        <link rel="stylesheet" type="text/css" href="../css/formatting.css">
+        <link rel="stylesheet" href="../css/all.css">
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/displayinfo.js"></script>
+    </head>
+    
+    <body>
+        <div class="w3-content" style="max-width:1100px">
+            <div class="w3-row w3-padding-64">
+                <div class="w3-col m6 w3-padding-large w3-hide-small">
+                    <img id="pageImage" src="../pics/pepper-standing.png" class="w3-round w3-image" alt="Pepper Pic" width="600" height="750">
+                </div>
+
+                <div class="w3-col m6 w3-padding-large">
+                    <div id="informationSection" class="w3-center">
+                        <hr />
+                        <h1 id="pageHeading" style="font-size: 45px;padding-top:50px"></h1>
+                        <hr />
+                        <h3 id="pageText"></h3>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </div>
+    </body>
+    <script type="text/javascript">
+        displayPageInformation();
+    </script>
+</html>
+
