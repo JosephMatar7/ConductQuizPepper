@@ -7,7 +7,8 @@ This project implements a use case where Pepper the robot quizzes a job applican
 
 Use Case
 
-The use case document can be found here: ConductQuizusecase.docx.
+The use case document can be found
+here: [ConductQuiz usecase.docx](https://github.com/user-attachments/files/17780563/ConductQuiz.usecase.docx)
 
 
 ---
