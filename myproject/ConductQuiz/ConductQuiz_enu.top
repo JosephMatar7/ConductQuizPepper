@@ -1,0 +1,11 @@
+topic: ~ConductQuiz()
+language: enu
+
+
+concept:(hello) [hello hi hey "good morning" greetings]
+
+
+u:(e:onStart)^rand["ok now I am gonna conduct a small quiz to test your knowledge. The quiz consists of 3 questions and is gonna last approximately 3 minutes, are you ready?" "ok now I am gonna conduct a small quiz to check your knowledge. The quiz includes 3 questions and is gonna close after 3 minutes, are you ready?" ]
+u:(["yes {*}" "sure {*}" "ok start {*}" "{*} ready" "start {*}" "go ahead"]) ^start(animations/Stand/Gestures/Excited_1) Good,lets start! ^wait(animations/Stand/Gestures/Excited_1) $yes=1 $onStopped=1;
+u:(["no {*}" "{*} not ready {*}" "later" "{*} another time" "{*} busy"]) ^start(animations/Stand/Gestures/No_1) Okay,no problem! ^wait(animations/Stand/Gestures/No_1) $no=1 $onStopped=1;
+ 
