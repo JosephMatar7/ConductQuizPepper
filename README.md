@@ -74,5 +74,3 @@ At the end of the quiz, Pepper informs the applicant that the quiz is finished a
 
 ---
 
-By: Joseph Mattar
-
