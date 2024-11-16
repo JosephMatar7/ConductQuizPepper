@@ -64,6 +64,11 @@ The quiz consists of 3 questions and has a time limit of 3 minutes.
 If the applicant does not answer all questions within 3 minutes, the quiz ends automatically.
 
 
+6. End:
+
+At the end of the quiz, Pepper informs the applicant that the quiz is finished and shows him his score.
+
+
 
 
 
