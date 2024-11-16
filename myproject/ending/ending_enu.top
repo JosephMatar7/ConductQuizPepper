@@ -1,0 +1,4 @@
+topic: ~ending()
+language: enu
+
+u:(e:onStart) Good Job, the quiz is finished!! Your score is $score. You answered $score out of 3 questions correctly.
