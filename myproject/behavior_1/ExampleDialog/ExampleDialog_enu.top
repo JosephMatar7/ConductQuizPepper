@@ -1,5 +1,0 @@
-topic: ~ExampleDialog()
-language: enu
-
-u:(increment) ok $increment=1
-u:(Stop) ok $value=$currentValue
