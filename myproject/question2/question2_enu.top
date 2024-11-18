@@ -1,0 +1,15 @@
+topic: ~question2()
+language: enu
+
+concept:(correctAnswer)  ^rand["Hurray you got it right" "Good Job,your answer is correct" " you picked the correct answer,Nicely done" "bravo, your answer is correct"] 
+concept:(wrongAnswer)  ^rand["too bad,you got it wrong" "you picked the wrong answer,try next time" "wrong answer, dont lose hope, you can do it" "too bad your answer is wrong, try harder" "dont be sad, you will get it the next time"] 
+concept:(hello) [hello hi hey "good morning" greetings]
+
+
+
+u:(e:onStart) second question, What does RAM stand for?
+    u1:([e:ans1q2 "{*} first {answer}" one "Random Access Module"]) $answerq=1 Random Access Module ~wrongAnswer $onStopped=1
+    u1:([e:ans2q2 "{*} second {answer}" two "Random Access Memory"]) $incrementScore=1 $answerq=2 Random Access Memory ~correctAnswer $onStopped=1 
+    u1:([e:ans3q2 "{*} third {answer}" three "Read Access Memory"]) $answerq=3 Read Access Memory ~wrongAnswer $onStopped=1
+    u1:([e:ans4q2 "{*} fourth {answer}" four "Read Application Memory"]) $answerq=4 Read Application Memory ~wrongAnswer $onStopped=1
+ 

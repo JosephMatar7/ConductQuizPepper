@@ -1,0 +1,150 @@
+body {
+    font-family: "Times New Roman", Georgia, Serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: "Times New Roman", Georgia, Serif;
+    letter-spacing: 5px;
+}
+
+.default-font {
+    font-family: 'Times New Roman', Georgia, Serif;
+}
+
+.center {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ------- *
+ * BUTTONS *
+ * ------- */
+.hre-btn { 
+    margin: 2em auto; 
+    width: 5em; 
+    line-height: 2em; 
+    border: 2px solid black; 
+    font-size: 1em; 
+    text-align: center; 
+}
+
+.button {
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+
+.large-button {
+    border-radius: 25px;
+    width: 100%;
+    height: auto;
+
+    border-style: solid;
+    border-width: 4px;
+    border-color: gray;
+
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: white;
+    font-size: 2.7vw;
+    color: black;
+    /* border-radius: 50%; */
+}
+
+.rate-button {
+    padding: 15px 25px;
+    font: size 40;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 5px #999;
+    border-radius: 50%;
+  }
+
+.rate-button:hover {
+    color: white;
+    background-color: lightgray; /*#3e8e41*/
+}
+
+.rate-button:active {
+    color: white;
+    background-color: green;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+.active-btn {
+    box-shadow: 0 -9px #999; /* goldenrod; */
+}
+.inactive-btn {
+    background-color: gray;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0px #999;
+    border-radius: 50%;
+}
+.gold-btn {color:gold} .gold-btn:hover, .gold-btn:active {background-color:gold; color: white;}
+.teal-btn {background-color:teal; color:whitesmoke;} .teal-btn:hover, .teal-btn:active {background-color:whitesmoke; color: teal;}
+.burlywood-btn {color:burlywood;} .burlywood-btn:hover, .burlywood-btn:active {background-color:burlywood; color: white;}
+.fade-red-btn {color: #dd4b39;} .fade-red-btn:hover, .fade-red-btn:active {background-color:#dd4b39; color: white;}
+.red-btn {background-color: whitesmoke;color: red;} .red-btn:hover, .red-btn:active {background-color:red; color: whitesmoke;}
+.start-btn {color: darkcyan} .start-btn:hover, .start-btn:active {background-color:maroon; color: white;}
+.brown-btn {background-color: whitesmoke;color: brown} .brown-btn:hover, .brown-btn:active {background-color:brown; color: white;}
+.green-btn {background-color: whitesmoke;color: green} .green-btn:hover, .green-btn:active {background-color:green; color: whitesmoke;}
+.blue-btn {background-color: #1589FF;color: whitesmoke} .blue-btn:hover, .blue-btn:active {background-color:whitesmoke; color: #1589FF;}
+
+.rounded-rect-btn {
+    border-radius: 5%;
+}
+.no-decoration a {
+    text-decoration: none;
+}
+
+/* -------- *
+ * FLOATING *
+ * -------- */
+.box-80 {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    width: 80%;
+    height: 70vh;
+    text-align: center;
+}
+
+.float-left {
+    width: 45%;
+    height: 100%;
+    float: left
+}
+
+.float-right {
+    width: 45%;
+    height: 100%;
+    float: right;
+}
+
+.hre-input {
+    padding: 4px 10px;
+}
+
+.input-field {
+    font-size: x-large; 
+    height: 50px; 
+    border: 2px solid grey;
+}

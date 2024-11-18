@@ -1,0 +1,4 @@
+topic: ~ending()
+language: enu
+
+u:(e:onStart) Good Job, the quiz is finished!! Your score is $onStart .Thank you!!!
