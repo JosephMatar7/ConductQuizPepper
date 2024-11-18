@@ -55,13 +55,13 @@ Highlights the selected answer in green (if correct) or red (if incorrect) on th
 
 After each answer, Pepper automatically moves to the next question.
 
-The quiz consists of 3 questions and has a time limit of 3 minutes.
+The quiz consists of 3 questions and has a time limit of 1 minute.
 
 
 
 5. Timeout:
 
-If the applicant does not answer all questions within 3 minutes, the quiz ends automatically.
+If the applicant does not answer all questions within 1 minute, the quiz ends automatically.
 
 
 6. End:
