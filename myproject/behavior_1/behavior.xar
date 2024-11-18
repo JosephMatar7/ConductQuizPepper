@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8" ?><ChoregrapheProject xmlns="http://www.aldebaran-robotics.com/schema/choregraphe/project.xsd" xar_version="3"><Box name="root" id="-1" localization="8" tooltip="Root box of Choregraphe&apos;s behavior. Highest level possible." x="0" y="0"><bitmap>media/images/box/root.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Timeline enable="0"><BehaviorLayer name="behavior_layer1"><BehaviorKeyframe name="keyframe1" index="1"><Diagram><Box name="ConductQuiz" id="3" localization="8" tooltip="An example of multilanguage dialog implementation" x="167" y="262"><dialogFile>../ConductQuiz/ConductQuiz.dlg</dialogFile><bitmap>media/images/box/box-dialog.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Output name="yes" type="1" type_size="1" nature="2" inner="0" tooltip="" id="5" /><Output name="no" type="1" type_size="1" nature="2" inner="0" tooltip="" id="6" /><Resource name="Speech" type="Lock" timeout="0" /><Resource name="Speech recognition" type="Lock" timeout="0" /></Box><Box name="QuizDialog" id="1" localization="8" tooltip="" x="388" y="142"><dialogFile>../Quiz/Quiz.dlg</dialogFile><bitmap>media/images/box/box-dialog.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Output name="answerq" type="1" type_size="1" nature="2" inner="0" tooltip="" id="5" /><Output name="increment" type="1" type_size="1" nature="2" inner="0" tooltip="" id="6" /></Box><Box name="Question1" id="8" localization="8" tooltip="Shows the webview (html content) on the tablet.&#x0A;&#x0A;V1.0.0&#x0A;" x="367" y="376"><bitmap>media/images/box/internet/internet.png</bitmap><script language="4"><content><![CDATA[
+
+
+
+class MyClass(GeneratedClass):
+
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        pass
+
+    def onUnload(self):
+        pass
+
+    def _getTabletService(self):
+        tabletService = None
+        try:
+            tabletService = self.session().service("ALTabletService")
+        except Exception as e:
+            self.logger.error(e)
+        return tabletService
+
+    def onInput_onStart(self):
+        # We create TabletService here in order to avoid
+        # problems with connections and disconnections of the tablet during the life of the application
+        tabletService = self._getTabletService()
+
+        # Get the app name
+        appName = self.packageUid()
+
+        if appName:
+            if tabletService:
+                # use default robot IP address from the tablet
+                robotIP = "198.18.0.1" # tabletService.getRobotIp()
+
+                # Set page details
+                pageHeading = "Thank you for your feedback"
+                pageText = "I am really happy that you liked the interaction"
+
+                # Set the URL
+                url = "http://{ip}/apps/{appName}/pages/question1.html?pageHeading={pageHeading}&pageText={pageText}".format(ip=robotIP, appName=appName, pageHeading=pageHeading, pageText=pageText)
+
+                self.logger.info(url)
+
+                # Show the web view on the tablet
+                tabletService.showWebview(url)
+            else:
+                self.logger.warning("Couldn't find tablet service, so can't set application: %s" % appName)
+
+        #
+        self.onStopped()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="0" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="3" /></Box><Box name="Question2" id="2" localization="8" tooltip="Shows the webview (html content) on the tablet.&#x0A;&#x0A;V1.0.0&#x0A;" x="633" y="397"><bitmap>media/images/box/internet/internet.png</bitmap><script language="4"><content><![CDATA[
+
+
+
+
+
+
+
+class MyClass(GeneratedClass):
+
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        pass
+
+    def onUnload(self):
+        pass
+
+    def _getTabletService(self):
+        tabletService = None
+        try:
+            tabletService = self.session().service("ALTabletService")
+        except Exception as e:
+            self.logger.error(e)
+        return tabletService
+
+    def onInput_onStart(self):
+        # We create TabletService here in order to avoid
+        # problems with connections and disconnections of the tablet during the life of the application
+        tabletService = self._getTabletService()
+
+        # Get the app name
+        appName = self.packageUid()
+
+        if appName:
+            if tabletService:
+                # use default robot IP address from the tablet
+                robotIP = "198.18.0.1" # tabletService.getRobotIp()
+
+                # Set page details
+                pageHeading = "Thank you for your feedback"
+                pageText = "I am really happy that you liked the interaction"
+
+                # Set the URL
+                url = "http://{ip}/apps/{appName}/pages/question2.html?pageHeading={pageHeading}&pageText={pageText}".format(ip=robotIP, appName=appName, pageHeading=pageHeading, pageText=pageText)
+
+                self.logger.info(url)
+
+                # Show the web view on the tablet
+                tabletService.showWebview(url)
+            else:
+                self.logger.warning("Couldn't find tablet service, so can't set application: %s" % appName)
+
+        #
+        self.onStopped()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="3" /></Box><Box name="question2" id="4" localization="8" tooltip="An example of multilanguage dialog implementation" x="679" y="169"><dialogFile>../question2/question2.dlg</dialogFile><bitmap>media/images/box/box-dialog.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Output name="answerq" type="1" type_size="1" nature="2" inner="0" tooltip="" id="5" /><Output name="increment" type="1" type_size="1" nature="2" inner="0" tooltip="" id="6" /><Resource name="Speech" type="Lock" timeout="0" /><Resource name="Speech recognition" type="Lock" timeout="0" /></Box><Box name="Question3" id="5" localization="8" tooltip="" x="888" y="298"><dialogFile>../question3/question3.dlg</dialogFile><bitmap>media/images/box/box-dialog.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Output name="answerq" type="1" type_size="1" nature="2" inner="0" tooltip="" id="5" /><Output name="increment" type="1" type_size="1" nature="2" inner="0" tooltip="" id="6" /></Box><Box name="Question3" id="6" localization="8" tooltip="Shows the webview (html content) on the tablet.&#x0A;&#x0A;V1.0.0&#x0A;" x="884" y="424"><bitmap>media/images/box/internet/internet.png</bitmap><script language="4"><content><![CDATA[
+
+
+
+
+
+
+
+class MyClass(GeneratedClass):
+
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        pass
+
+    def onUnload(self):
+        pass
+
+    def _getTabletService(self):
+        tabletService = None
+        try:
+            tabletService = self.session().service("ALTabletService")
+        except Exception as e:
+            self.logger.error(e)
+        return tabletService
+
+    def onInput_onStart(self):
+        # We create TabletService here in order to avoid
+        # problems with connections and disconnections of the tablet during the life of the application
+        tabletService = self._getTabletService()
+
+        # Get the app name
+        appName = self.packageUid()
+
+        if appName:
+            if tabletService:
+                # use default robot IP address from the tablet
+                robotIP = "198.18.0.1" # tabletService.getRobotIp()
+
+                # Set page details
+                pageHeading = "Thank you for your feedback"
+                pageText = "I am really happy that you liked the interaction"
+
+                # Set the URL
+                url = "http://{ip}/apps/{appName}/pages/question3.html?pageHeading={pageHeading}&pageText={pageText}".format(ip=robotIP, appName=appName, pageHeading=pageHeading, pageText=pageText)
+
+                self.logger.info(url)
+
+                # Show the web view on the tablet
+                tabletService.showWebview(url)
+            else:
+                self.logger.warning("Couldn't find tablet service, so can't set application: %s" % appName)
+
+        #
+        self.onStopped()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="3" /></Box><Box name="QuizTimer" id="14" localization="8" tooltip="Wait a moment before triggering the output. &#x0A;Can be stopped anytime. &#x0A;Multiple inputs will trigger multiple outputs." x="657" y="569"><bitmap>media/images/box/wait.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self, False)
+
+    def onLoad(self):
+        self.delayed = []
+
+    def onUnload(self):
+        self.cancelDelays()
+
+    def cancelDelays(self):
+        cancel_list = list(self.delayed)
+        for d in cancel_list:
+            d.cancel()
+
+    def cleanDelay(self, fut, fut_ref):
+        self.delayed.remove(fut)
+
+    def triggerOutput(self):
+        self.timerOutput()
+
+    def onInput_onStart(self):
+        import qi
+        import functools
+        delay_future = qi.async(self.triggerOutput, delay=int(self.getParameter("Timeout (s)") * 1000 * 1000))
+        # keep the async operation in an array for cancel
+        # and remove it when it is finished in the callback
+        self.delayed.append(delay_future)
+        bound_clean = functools.partial(self.cleanDelay, delay_future)
+        delay_future.addCallback(bound_clean)
+
+    def onInput_onStop(self):
+        if self.getParameter("Trigger timerOutput if cancelled") and self.delayed:
+            self.timerOutput()
+        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Start the Delay box with the configured timeout value." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Stop the wait and stimulate the output." id="3" /><Output name="timerOutput" type="1" type_size="1" nature="1" inner="0" tooltip="Send a bang once delay set in parameters is elapsed, or if the box is stopped and the appropriate parameter is set." id="4" /><Parameter name="Timeout (s)" inherits_from_parent="0" content_type="2" value="60" default_value="1" min="0" max="5000" tooltip="Duration the box waits before stimulating the output." id="5" /><Parameter name="Trigger timerOutput if cancelled" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="If the box is currently delaying at least one signal and cancelled, output will be stimulated." id="6" /></Box><Box name="TimeOver" id="7" localization="8" tooltip="Shows the webview (html content) on the tablet.&#x0A;&#x0A;V1.0.0&#x0A;" x="751" y="783"><bitmap>media/images/box/internet/internet.png</bitmap><script language="4"><content><![CDATA[
+
+
+
+class MyClass(GeneratedClass):
+
+    def __init__(self):
+        GeneratedClass.__init__(self)
+
+    def onLoad(self):
+        pass
+
+    def onUnload(self):
+        pass
+
+    def _getTabletService(self):
+        tabletService = None
+        try:
+            tabletService = self.session().service("ALTabletService")
+        except Exception as e:
+            self.logger.error(e)
+        return tabletService
+
+    def onInput_onStart(self):
+        # We create TabletService here in order to avoid
+        # problems with connections and disconnections of the tablet during the life of the application
+        tabletService = self._getTabletService()
+
+        # Get the app name
+        appName = self.packageUid()
+
+        if appName:
+            if tabletService:
+                # use default robot IP address from the tablet
+                robotIP = "198.18.0.1" # tabletService.getRobotIp()
+
+                # Set page details
+                pageHeading = "Thank you for your feedback"
+                pageText = "I am really happy that you liked the interaction"
+
+                # Set the URL
+                url = "http://{ip}/apps/{appName}/pages/timeover.html?pageHeading={pageHeading}&pageText={pageText}".format(ip=robotIP, appName=appName, pageHeading=pageHeading, pageText=pageText)
+
+                self.logger.info(url)
+
+                # Show the web view on the tablet
+                tabletService.showWebview(url)
+            else:
+                self.logger.warning("Couldn't find tablet service, so can't set application: %s" % appName)
+
+        #
+        self.onStopped()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="0" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="3" /></Box><Box name="Wait" id="9" localization="8" tooltip="Wait a moment before sending a signal on the output. &#x0A;Can be stopped anytime. &#x0A;Stimulating the input again before output is activated restarts the waiting period.&#x0A;" x="974" y="549"><bitmap>media/images/box/wait.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self, False)
+
+    def onLoad(self):
+        self.waiting = None
+
+    def onUnload(self):
+        self.cancelWaiting()
+
+    def triggerOutput(self):
+        self.timerOutput()
+
+    def cancelWaiting(self):
+        if self.waiting:
+            self.waiting.cancel()
+        self.waiting = None
+
+    def onInput_onStart(self):
+        self.cancelWaiting()
+        import qi
+        self.waiting = qi.async(self.triggerOutput, delay=int(self.getParameter("Timeout (s)") * 1000 * 1000))
+
+    def onInput_onStop(self):
+        if self.getParameter("Trigger timerOutput if cancelled") and self.waiting and self.waiting.isRunning():
+            self.timerOutput()
+        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Start the Wait box with the configured timeout value." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Stop the wait and stimulate the output." id="3" /><Output name="timerOutput" type="1" type_size="1" nature="1" inner="0" tooltip="Send a bang once time set in parameters is elapsed, or if the box is stopped and the appropriate parameter is set." id="4" /><Parameter name="Timeout (s)" inherits_from_parent="0" content_type="2" value="5" default_value="1" min="0" max="5000" tooltip="Duration the box waits before stimulating the output." id="5" /><Parameter name="Trigger timerOutput if cancelled" inherits_from_parent="0" content_type="0" value="0" default_value="1" tooltip="If the box is currently waiting and cancelled, output will be stimulated." id="6" /></Box><Box name="Say" id="10" localization="8" tooltip="Say some text. The text can be localized." x="956" y="770"><bitmap>media/images/box/interaction/say.png</bitmap><script language="4"><content><![CDATA[import time
+
+class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self, False)
+        self.tts = ALProxy('ALTextToSpeech')
+        self.ttsStop = ALProxy('ALTextToSpeech', True) #Create another proxy as wait is blocking if audioout is remote
+
+    def onLoad(self):
+        self.bIsRunning = False
+        self.ids = []
+
+    def onUnload(self):
+        for id in self.ids:
+            try:
+                self.ttsStop.stop(id)
+            except:
+                pass
+        while( self.bIsRunning ):
+            time.sleep( 0.2 )
+
+    def onInput_onStart(self):
+        self.bIsRunning = True
+        try:
+            sentence = "\RSPD="+ str( self.getParameter("Speed (%)") ) + "\ "
+            sentence += "\VCT="+ str( self.getParameter("Voice shaping (%)") ) + "\ "
+            sentence += self.getParameter("Text")
+            sentence +=  "\RST\ "
+            id = self.tts.post.say(str(sentence))
+            self.ids.append(id)
+            self.tts.wait(id, 0)
+        finally:
+            try:
+                self.ids.remove(id)
+            except:
+                pass
+            if( self.ids == [] ):
+                self.onStopped() # activate output of the box
+                self.bIsRunning = False
+
+    def onInput_onStop(self):
+        self.onUnload()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when Diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this Input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this Input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when Box behavior is finished." id="4" /><Parameter name="Voice shaping (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="150" tooltip='Used to modify at runtime the voice feature (tone, speed). In a slighty&#x0A;different way than pitch and speed, it gives a kind of &quot;gender or age&#x0A;modification&quot; effect.&#x0A;&#x0A;For instance, a quite good male derivation of female voice can be&#x0A;obtained setting this parameter to 78%.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the&#x0A;speed parameter. For example, if you want to decrease by 20% the voice&#x0A;shaping, you will have to increase by 20% the speed to keep a constant&#x0A;average speed.' id="5" /><Parameter name="Speed (%)" inherits_from_parent="1" content_type="1" value="100" default_value="100" min="50" max="200" tooltip="Changes the speed of the voice.&#x0A;&#x0A;Note: For a better effect, you can compensate this parameter with the voice&#x0A;shaping parameter. For example, if you want to increase by 20% the speed, you&#x0A;will have to decrease by 20% the voice shaping to keep a constant average&#x0A;speed." id="6" /><Parameter name="Text" inherits_from_parent="0" content_type="5" value="time is over, dont be sad" default_value="" tooltip="The text you want to say. Don&apos;t forget to translate it!" id="7" /></Box><Box name="ending" id="12" localization="8" tooltip="Shows the webview (html content) on the tablet.&#x0A;&#x0A;V1.0.0&#x0A;" x="1408" y="632"><bitmap>media/images/box/internet/internet.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+
+    def _init_(self):
+        GeneratedClass._init_(self)
+
+    def onLoad(self):
+        pass
+
+    def onUnload(self):
+        pass
+
+    def _getTabletService(self):
+        tabletService = None
+        try:
+            tabletService = self.session().service("ALTabletService")
+        except Exception as e:
+            self.logger.error(e)
+        return tabletService
+
+    def onInput_dataOutput(self, n):
+        # We create TabletService here in order to avoid
+        # problems with connections and disconnections of the tablet during the life of the application
+        tabletService = self._getTabletService()
+
+        # Get the app name
+        appName = self.packageUid()
+
+        if appName:
+            if tabletService:
+                # use default robot IP address from the tablet
+                robotIP = "198.18.0.1"  # tabletService.getRobotIp()
+
+                # Set page details
+                pageHeading = "Thank you for your feedback"
+                pageText = "I am really happy that you liked the interaction"
+
+                # Set the URL
+                url = "http://{ip}/apps/{appName}/pages/score.html?pageHeading={pageHeading}&pageText={pageText}&score={n}".format(
+                    ip=robotIP, appName=appName, pageHeading=pageHeading, pageText=pageText, n=n)
+
+                self.logger.info(url)
+
+                # Show the web view on the tablet
+                tabletService.showWebview(url)
+            else:
+                self.logger.warning("Couldn't find tablet service, so can't set application: %s" % appName)
+
+        self.onStopped()]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="dataOutput" type="3" type_size="1" nature="1" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="3" /></Box><Box name="ending" id="13" localization="8" tooltip="An example of multilanguage dialog implementation" x="1487" y="354"><dialogFile>../ending/ending.dlg</dialogFile><bitmap>media/images/box/box-dialog.png</bitmap><script language="4"><content><![CDATA[]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="Score" type="3" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="4" /><Resource name="Speech" type="Lock" timeout="0" /><Resource name="Speech recognition" type="Lock" timeout="0" /></Box><Box name="Python Script" id="11" localization="8" tooltip="This box contains a basic python script and can be used to create any python script box you would like.&#x0A;&#x0A;To edit its script, double-click on it." x="1244" y="241"><bitmap>media/images/box/box-python-script.png</bitmap><script language="4"><content><![CDATA[class MyClass(GeneratedClass):
+    def __init__(self):
+        GeneratedClass.__init__(self)
+        self.score = 0  # Variable to hold the current score
+
+    def onLoad(self):
+        # Initialization code can go here if needed
+        pass
+
+    def onUnload(self):
+        # Clean-up code can go here if needed
+        pass
+
+    def onInput_onStart(self):
+        self.score = 0  # Initialize score to 0 when the box starts
+        print("Box started. Score initialized to:", self.score)
+
+    def onInput_onStop(self):
+        self.onUnload()  # Clean-up when the box stops
+        self.onStopped()  # Activate the output of the box
+
+    def onInput_increment(self):
+        self.score += 1  # Increment the score
+        print("Score incremented to:", self.score)  # For debugging
+
+    def onInput_signal(self):
+        self.dataOutput(str(self.score))  # Transfer score to output as string
+        print("Score transferred to output:", self.score)  # For debugging]]></content></script><Input name="onLoad" type="1" type_size="1" nature="0" inner="1" tooltip="Signal sent when diagram is loaded." id="1" /><Input name="onStart" type="1" type_size="1" nature="2" inner="0" tooltip="Box behavior starts when a signal is received on this input." id="2" /><Input name="onStop" type="1" type_size="1" nature="3" inner="0" tooltip="Box behavior stops when a signal is received on this input." id="3" /><Input name="signal" type="1" type_size="1" nature="1" inner="0" tooltip="" id="4" /><Input name="increment" type="1" type_size="1" nature="1" inner="0" tooltip="" id="5" /><Output name="onStopped" type="1" type_size="1" nature="1" inner="0" tooltip="Signal sent when box behavior is finished." id="6" /><Output name="dataOutput" type="3" type_size="1" nature="2" inner="0" tooltip="" id="7" /></Box><Link inputowner="1" indexofinput="2" outputowner="3" indexofoutput="5" /><Link inputowner="0" indexofinput="4" outputowner="3" indexofoutput="6" /><Link inputowner="4" indexofinput="2" outputowner="1" indexofoutput="5" /><Link inputowner="3" indexofinput="2" outputowner="0" indexofoutput="2" /><Link inputowner="14" indexofinput="2" outputowner="3" indexofoutput="5" /><Link inputowner="9" indexofinput="2" outputowner="14" indexofoutput="4" /><Link inputowner="10" indexofinput="2" outputowner="14" indexofoutput="4" /><Link inputowner="0" indexofinput="4" outputowner="13" indexofoutput="4" /><Link inputowner="5" indexofinput="2" outputowner="4" indexofoutput="5" /><Link inputowner="13" indexofinput="2" outputowner="11" indexofoutput="7" /><Link inputowner="11" indexofinput="4" outputowner="9" indexofoutput="4" /><Link inputowner="11" indexofinput="4" outputowner="5" indexofoutput="5" /><Link inputowner="11" indexofinput="5" outputowner="5" indexofoutput="6" /><Link inputowner="11" indexofinput="5" outputowner="4" indexofoutput="6" /><Link inputowner="11" indexofinput="5" outputowner="1" indexofoutput="6" /><Link inputowner="11" indexofinput="2" outputowner="0" indexofoutput="2" /><Link inputowner="12" indexofinput="2" outputowner="11" indexofoutput="7" /><Link inputowner="7" indexofinput="2" outputowner="14" indexofoutput="4" /><Link inputowner="8" indexofinput="2" outputowner="3" indexofoutput="5" /><Link inputowner="2" indexofinput="2" outputowner="1" indexofoutput="5" /><Link inputowner="6" indexofinput="2" outputowner="4" indexofoutput="5" /></Diagram></BehaviorKeyframe></BehaviorLayer></Timeline></Box></ChoregrapheProject>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interact with Pepper</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/w3.css">
+        <link rel="stylesheet" type="text/css" href="../css/formatting.css">
+        <link rel="stylesheet" href="../css/all.css">
+
+        <script src="/libs/qi/2/qi.js"></script>
+        <script src="../js/jquery.js"></script>
+        <script src="../js/help.js"></script>
+    </head>
+    
+    <body>
+        <!-- Navbar -->
+        <div class="w3-top">
+            <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+                <a href="../index.html" class="w3-bar-item w3-button">WELCOME</a>
+                <!-- Right-sided navbar links. Hide them on small screens -->
+                <div class="w3-right w3-hide-small">
+                    <a href="../index.html" class="w3-bar-item w3-button">Home</a>
+                    <a href="displayinfo.html" class="w3-bar-item w3-button">About</a>
+                </div>
+            </div>
+        </div>
+        <!-- Page content -->
+        <div class="w3-content" style="max-width:1100px">
+            <!-- Tip Section -->
+            <div class="w3-row w3-padding-64" id="riddle">
+                <div class="w3-col m6 w3-padding-large w3-hide-small">
+                    <img id="pageImage" src="../pics/pepper-question.png" class="w3-round w3-image" alt="Question Pic" width="600" height="750">
+                </div>
+
+                <div class="w3-col m6 w3-padding-large">
+                    <!-- h1 class="w3-center" style="font-size: 45px;font-weight: bold;padding-top:50px;">Good Day!</h1><br -->
+                    <div id="questions">
+                        <h1 class="w3-center" style="font-size: 45px;padding-top:50px">
+                            How can I help you?</span><br>
+                        </h1>
+                        <div style="overflow:auto;">
+                            <div style="float:center;">
+                                <hr>
+                                <p class="w3-center">
+                                    <!-- a href="../index.html" -->
+                                        <button type="button" id="CheckIn" onclick="serviceTypeButtonListener(1)" class="fa rate-button rounded-rect-btn brown-btn" style="font-size:30px;">
+                                            <span class="fa-hand-point-down"></span><br>
+                                            <span class="default-font">Check-In</span>
+                                        </button>
+                                    <!-- /a -->
+                                </p>
+                                <p class="w3-center">
+                                    <!-- a href="../index.html" style="padding-left: 30px;" -->
+                                        <button type="button" id="NewAppointment" onclick="serviceTypeButtonListener(2)" class="fa rate-button rounded-rect-btn green-btn" style="font-size:30px;">
+                                            <span class="default-font">New Appointment</span><br>
+                                            <span class="fa-hand-point-up"></span>
+                                        </button>
+                                    <!-- /a -->
+                                </p>
+                                <hr>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+        <!-- Footer -->
+        <footer class="w3-center w3-light-grey w3-padding-32">
+            <p>Powered by <a href="https://www.softbankrobotics.com/emea/en" title="PEPPER" target="_blank" class="w3-hover-text-green">PEPPER</a></p>
+        </footer>
+    </body>
+
+</html>
+
