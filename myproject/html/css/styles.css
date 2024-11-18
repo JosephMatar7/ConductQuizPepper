@@ -1,0 +1,55 @@
+/* Reset some basic styles */
+body, h1, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    width: 100px; /* Adjust logo size */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Main Content */
+.content {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hr-image {
+    width: 50%; /* Adjust HR image size */
+    max-width: 300px; /* Optional max width */
+    margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    font-size: 14px;
+    border-top: 1px solid #ccc;
+}

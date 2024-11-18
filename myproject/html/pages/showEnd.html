@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>USEK HR - Farewell Candidates</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* Navbar styling */
+      .navbar {
+        background: #001f3f; /* Primary color */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 180px; /* Set navbar height to 180px */
+        padding: 0 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+      }
+
+      .logo {
+        width: 100px;
+        height: 100px;
+        background: white;
+        padding: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-title {
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      /* Main content styling */
+      .hero {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        flex: 1;
+      }
+
+      .hero-content {
+        flex: 1;
+        padding-right: 20px;
+        text-align: left;
+      }
+
+      .hero-title {
+        font-size: 48px;
+        font-weight: bold;
+        color: #001f3f;
+        margin-bottom: 10px;
+      }
+
+      .hero-subtitle {
+        font-size: 18px;
+        color: #495057;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+        color: #6c757d;
+        line-height: 1.6;
+      }
+
+      .hero-image {
+        flex: 1;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Footer styling */
+      .footer {
+        background: #001f3f;
+        color: white;
+        text-align: center;
+        height: 100px; /* Set footer height to 100px */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .footer-content {
+        font-size: 16px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero-content {
+          padding-right: 0;
+          margin-bottom: 20px;
+        }
+
+        .hero-title {
+          font-size: 36px;
+        }
+
+        .hero-subtitle {
+          font-size: 16px;
+        }
+
+        .hero-description {
+          font-size: 14px;
+        }
+
+        .hero-image {
+          max-width: 80%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <img src="../pics/usek_logo.png" alt="USEK Logo" class="logo" />
+      <div class="nav-title">HR Management</div>
+    </nav>
+
+    <main class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Thank You!</h1>
+        <p class="hero-subtitle">Your Journey Doesn't End Here</p>
+        <p class="hero-description">
+          We are grateful for your time and dedication throughout the process.
+          Your story is just beginning, and we hope it leads to a future filled
+          with growth, success, and meaningful impact.
+        </p>
+      </div>
+      <img src="../pics/pepperbye.png" alt="Farewell Image" class="hero-image" />
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">© 2024 USEK HR Management</div>
+    </footer>
+  </body>
+</html>
