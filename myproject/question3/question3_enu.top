@@ -7,7 +7,7 @@ concept:(hello) [hello hi hey "good morning" greetings]
 
 
 u:(e:onStart) third question, What is the programming language developed by Oracle?
-    u1:([e:ans1q3 "{*} first {answer}" one "Java"]) $increment=1 $answerq=1 Java ~correctAnswer $onStopped=1
+    u1:([e:ans1q3 "{*} first {answer}" one "Java"]) $increment=1 Java ~correctAnswer $answerq=1 $onStopped=1
     u1:([e:ans2q3 "{*} second {answer}" two "C plus plus"]) $answerq=2  C plus plus  ~wrongAnswer $onStopped=1
     u1:([e:ans3q3 "{*} third {answer}" three "C sharp"]) $answerq=3 C sharp ~wrongAnswer $onStopped=1
     u1:([e:ans4q3 "{*} fourth {answer}" four "kotlin"]) $answerq=4 Kotlin ~wrongAnswer $onStopped=1
